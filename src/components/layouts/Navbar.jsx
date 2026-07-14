@@ -1,6 +1,8 @@
 import React from 'react';
 import Logo from './Logo';
 import NavLink from '../buttons/NavLink';
+import Link from 'next/link';
+import { BsCart2 } from "react-icons/bs";
 
 
 
@@ -41,8 +43,13 @@ const Navbar = () => {
       {nav}
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end space-x-4">
+    <Link href={"/cart"} className='btn btn-primary'>
+      <BsCart2 />
+    </Link>
+    <Link href={"/login"}>
+    <button className='btn btn-primary btn-outline'>Login</button>
+    </Link>
   </div>
 </div>
          </div>
