@@ -1,12 +1,23 @@
 import React from 'react';
 import Logo from './Logo';
-import Link from 'next/link';
+import NavLink from '../buttons/NavLink';
+
+
 
 
 const Navbar = () => {
     const nav = <>
     <li>
-        <Link href="{/}">Home</Link>
+        <NavLink href={"/"}>Home</NavLink>
+    </li>
+    <li>
+        <NavLink href={"/products"}>Products</NavLink>
+    </li>
+    <li>
+        <NavLink href={"/blog"}>Blog</NavLink>
+    </li>
+    <li>
+        <NavLink href={"/contact"}>Contact</NavLink>
     </li>
     </>
     return (
@@ -20,32 +31,14 @@ const Navbar = () => {
       <ul
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+       {nav}
       </ul>
     </div>
     <Logo />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2 bg-base-100 w-40 z-1">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
+      {nav}
     </ul>
   </div>
   <div className="navbar-end">
