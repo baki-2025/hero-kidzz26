@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
@@ -17,16 +17,15 @@ export default function RootLayout({ children }) {
     <html
       lang="en">
       <body className={`${poppins.className} antialiased`}>
-        <header className="flex flex-col flex-1 items-center justify-center">
+        <header className="py-2 md:w-11/12 mx-auto">
           <Navbar />
-          <main className="flex flex-col flex-1 items-center justify-center">{children}</main>
-          
-        </header>
-       
-        <footer>
+          </header>
+       <main className="py-2 md:w-11/12 mx-auto">{children}</main>
+          <footer>
           <Footer />
         </footer>
       </body>
     </html>
   );
 }
+
